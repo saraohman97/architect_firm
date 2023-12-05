@@ -6,6 +6,7 @@ import { AiOutlineMenu } from 'react-icons/ai'
 import Line from '../components/Line';
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
+import cap from '../assets/cap.gif'
 
 const comments = [
     {
@@ -131,7 +132,7 @@ function Home() {
             {/* comments section */}
             <section className='flex flex-col items-center w-auto my-10'>
                 <p className='font-light md:w-[550px] text-center flex justify-center mb-28'>The only way to get to know a company is by its talents and
-                    connections. Robin Ohlin and company dominate in both.
+                    connections. Wynonna Earp and company dominate in both.
                     Don’t believe us? Ask our previous customers. </p>
 
                 <div className='md:columns-2 w-full md:px-20'>
@@ -173,30 +174,22 @@ function Home() {
 
             {/* contact section */}
             <section className='flex flex-col items-center w-auto my-10 relative'>
-                <p className='font-light text-center flex justify-center md:mb-20'>Visit Us</p>
-                <h1 className='uppercase md:text-8xl text-[#b59f2169] absolute -z-10 md:left-40 top-10 tracking-[10px]'>Contact Us</h1>
+                <p className='font-light text-center flex justify-center'>Visit Us</p>
 
                 {/* contact form */}
-                <div className='flex flex-row md:justify-end justify-center lg:gap-32 gap-10 w-full lg:px-32'>
-                    <form className='flex flex-col gap-8 mt-32 items-end'>
-                        <div className="input-field">
-                            <input type="text" id="name" required />
-                            <label for="name">Your name</label>
-                        </div>
-                        <div className="input-field">
-                            <input type="text" id="number" required />
-                            <label for="number">Your number</label>
-                        </div>
-                        <div className="input-field">
-                            <input type="email" id="email" required />
-                            <label for="email">Your email</label>
-                        </div>
+                <div className='flex justify-center w-full'>
+                    <form className='flex flex-col gap-8 mt-16 items-end w-80'>
+                        <input type="text" id="name" required placeholder='Your Name' className='w-full px-14 py-2 rounded-3xl shadow-inner border outline-yellow-500' />
+                        <input type="text" id="name" required placeholder='Your email' className='w-full px-14 py-2 rounded-3xl shadow-inner border outline-yellow-500' />
+                        <textarea rows='10' type="text" id="name" required placeholder='Message' className='w-full px-14 py-2 rounded-3xl shadow-inner border outline-yellow-500' />
+                        <img src={cap} alt="" />
 
-                        <button className='bg-black text-yellow-500 px-10 py-2 w-fit'>SEND!</button>
+                        <button className='border border-gray-600 py-1 px-4 rounded-3xl hover:bg-black hover:text-white hover:animate-pulse'>Send</button>
+
                     </form>
 
                     {/* map */}
-                    <iframe className='max-md:hidden' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2018.5198928468974!2d16.54683719162071!3d59.607706623609616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465e613c4d4d6065%3A0xa98f1fb897a0eae5!2sV%C3%A4ster%C3%A5s%20Centralstation!5e0!3m2!1ssv!2sse!4v1696887938759!5m2!1ssv!2sse" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title='karta'></iframe>
+                    {/* <iframe className='max-md:hidden' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2018.5198928468974!2d16.54683719162071!3d59.607706623609616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465e613c4d4d6065%3A0xa98f1fb897a0eae5!2sV%C3%A4ster%C3%A5s%20Centralstation!5e0!3m2!1ssv!2sse!4v1696887938759!5m2!1ssv!2sse" class='map' width='900' height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title='karta'></iframe> */}
                 </div>
             </section>
 
