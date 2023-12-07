@@ -184,7 +184,7 @@ function Home() {
                 </div>
 
                 {map ? (
-                    <iframe className='max-md:hidden' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2018.5198928468974!2d16.54683719162071!3d59.607706623609616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465e613c4d4d6065%3A0xa98f1fb897a0eae5!2sV%C3%A4ster%C3%A5s%20Centralstation!5e0!3m2!1ssv!2sse!4v1696887938759!5m2!1ssv!2sse" class='map' width='900' height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title='karta'></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2018.5198928468974!2d16.54683719162071!3d59.607706623609616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465e613c4d4d6065%3A0xa98f1fb897a0eae5!2sV%C3%A4ster%C3%A5s%20Centralstation!5e0!3m2!1ssv!2sse!4v1696887938759!5m2!1ssv!2sse" class='map' width='auto' height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title='karta'></iframe>
                 ) : (
                     <div className='flex justify-center w-full'>
                         <form className='flex flex-col gap-8 items-end w-80'>
