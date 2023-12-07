@@ -75,6 +75,8 @@ const work = [
 function Home() {
     // menu state
     const [openMenu, setOpenMenu] = useState(false)
+    // Toggle visit-us-section
+    const [map, setMap] = useState(false)
 
     return (
         <div className='p-6 md:p-10 max-w-screen-xl m-auto overflow-x-hidden'>
@@ -174,23 +176,29 @@ function Home() {
 
             {/* contact section */}
             <section className='flex flex-col items-center w-auto my-10 relative'>
-                <p className='font-light text-center flex justify-center'>Visit Us</p>
+                <p className='font-light text-center flex justify-center mb-6'>Visit Us</p>
 
-                {/* contact form */}
-                <div className='flex justify-center w-full'>
-                    <form className='flex flex-col gap-8 mt-16 items-end w-80'>
-                        <input type="text" id="name" required placeholder='Your Name' className='w-full px-14 py-2 rounded-3xl shadow-inner border outline-yellow-500' />
-                        <input type="text" id="name" required placeholder='Your email' className='w-full px-14 py-2 rounded-3xl shadow-inner border outline-yellow-500' />
-                        <textarea rows='10' type="text" id="name" required placeholder='Message' className='w-full px-14 py-2 rounded-3xl shadow-inner border outline-yellow-500' />
-                        <img src={cap} alt="" />
-
-                        <button className='border border-gray-600 py-1 px-4 rounded-3xl hover:bg-black hover:text-white hover:animate-pulse'>Send</button>
-
-                    </form>
-
-                    {/* map */}
-                    {/* <iframe className='max-md:hidden' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2018.5198928468974!2d16.54683719162071!3d59.607706623609616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465e613c4d4d6065%3A0xa98f1fb897a0eae5!2sV%C3%A4ster%C3%A5s%20Centralstation!5e0!3m2!1ssv!2sse!4v1696887938759!5m2!1ssv!2sse" class='map' width='900' height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title='karta'></iframe> */}
+                <div className='flex flex-row gap-14 mb-20 font-bold cursor-pointer'>
+                    <p onClick={() => setMap(false)} className={map === false && 'border-b-2 border-black'}>Contact form</p>
+                    <p onClick={() => setMap(true)} className={map && 'border-b-2 border-black'}>Our location</p>
                 </div>
+
+                {map ? (
+                    <iframe className='max-md:hidden' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2018.5198928468974!2d16.54683719162071!3d59.607706623609616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465e613c4d4d6065%3A0xa98f1fb897a0eae5!2sV%C3%A4ster%C3%A5s%20Centralstation!5e0!3m2!1ssv!2sse!4v1696887938759!5m2!1ssv!2sse" class='map' width='900' height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title='karta'></iframe>
+                ) : (
+                    <div className='flex justify-center w-full'>
+                        <form className='flex flex-col gap-8 items-end w-80'>
+                            <input type="text" id="name" required placeholder='Your Name' className='w-full px-14 py-2 border-b-2 border-black placeholder-black outline-none' />
+                            <input type="text" id="name" required placeholder='Your email' className='w-full px-14 py-2 border-b-2 border-black placeholder-black outline-none' />
+                            <textarea rows='5' type="text" id="name" required placeholder='Message' className='w-full px-14 py-2 border-b-2 border-black placeholder-black outline-none' />
+                            <img src={cap} alt="" />
+
+                            <button class="rounded-full border bg-white border-black before:ease relative h-10 w-24 overflow-hidden before:absolute before:left-0 before:-ml-2 before:h-48 before:w-48 before:origin-top-right before:-translate-x-full before:translate-y-12 before:-rotate-90 before:bg-gray-900 before:transition-all before:duration-300 hover:text-white hover:before:-rotate-180">
+                                <span class="relative z-10">Send</span>
+                            </button>
+                        </form>
+                    </div>
+                )}
             </section>
 
             <Line />
