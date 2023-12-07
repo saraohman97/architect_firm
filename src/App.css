@@ -12,8 +12,3 @@ html, body {
 .item:hover .content {
   display: block;
 }
-
-.map{
-  /* filter: grayscale(100%) invert(92%) contrast(83%); */
-  filter: grayscale(100%);
-}
